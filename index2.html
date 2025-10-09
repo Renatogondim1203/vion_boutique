@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vion Salon</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="site" id="top">
+        <header>
+            <div class="nav">
+                <div class="logo">
+                    <!--logo: deixe acessível-->
+                    <img src="assets/img/vion_boutique_dourado_png.png" alt="Vion Salon">
+                    <span class="brand-name"></span>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#Servicos">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <a class="cta-small" href="tel:+5583999999999" aria-label="Ligar para o salão">Ligar</a>
+            </div>
+        </header>
+
+        <!--  HERO  -->
+
+        <main class="hero" id="inicio" role="main">
+            <div class="hero-left">
+                <div class="eyebrow">Beleza & Sofisticação</div>
+                <h1>Beleza com sofisticação - tratamentos e estilo que realçam sua melhor versão.</h1>
+                <p class="muted">Ambiente premium, profissionais experientes e atendimento personalizado.</p>
+                <div class="cta-group">
+                    <a class="btn btn-primary" href="https://wa.me/5583993242246" target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp">Agendar pelo WhatsApp</a>
+                    <a class="btn btn-ghost" href="#portfolio">Ver Portfólio</a>
+                </div>
+            </div>
+        </main>
+
+        <!--  SOBRE  -->
+
+        <section id="sobre" aria-labelledby="sobreTitle">
+        <h2 id="sobreTitle" class="section-title">Sobre o salão</h2>
+        <p class="muted">
+            O Salão Vion oferece serviços de alto padrão em cabelo, maquiagem, unhas e tratamentos estéticos. <br>
+            Nossa equipe prioriza técnica, estética e bem-estar.
+        </p>
+
+        <div class="equipe-layout">
+            <img src="assets/img/equipe.png" alt="Equipe do Salão Vion sorrindo" />
+            <div>
+            <p class="muted">
+                Há anos no mercado, o Vion se destaca por serviços personalizados, ambiente sofisticado e atenção aos detalhes.
+                Garantimos experiências exclusivas para cada cliente.
+            </p>
+            </div>
+        </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" aria-labelledby="servicosTitle">
+        <h2 id="servicosTitle" class="section-title">Serviços principais</h2>
+        <div class="services-grid" role="list">
+            
+            <article class="service" role="listitem" aria-label="Cabelo" style="background-image: url('assets/img/modelo-frente-sexy.jpeg');">
+            <h4>Cabelo</h4>
+            </article>
+
+            <article class="service" role="listitem" aria-label="Maquiagem" style="background-image: url('assets/img/modelo-costas.jpeg');">
+            <h4>Maquiagem</h4>
+            </article>
+
+            <article class="service" role="listitem" aria-label="Unhas & Spa" style="background-image: url('assets/img/modelo-lado.jpeg');">
+            <h4>Unhas & Spa</h4>
+            </article>
+
+        </div>
+        </section>
+
+        <!-- PORTFÓLIO / GALLERY -->
+
+        <section id="portfolio" aria-labelledby="portfolioTitle">
+        <h2 id="portfolioTitle" class="section-title">Galeria / Portfólio</h2>
+
+        <div class="gallery-grid" aria-live="polite">
+            <figure><img src="assets/img/modelo-frente-sexy.jpeg" alt="Trabalho 1 - substituir"></figure>
+            <figure><img src="assets/img/modelo-lado.jpeg" alt="Trabalho 2 - substituir"></figure>
+            <figure><img src="assets/img/modelo-frente-preto.jpeg" alt="Trabalho 3 - substituir"></figure>
+            <figure><img src="assets/img/modelo-frente.jpeg" alt="Trabalho 4 - substituir"></figure>
+            <figure><img src="assets/img/modelo-frente-3.jpeg" alt="Trabalho 5 - substituir"></figure>
+            <figure><img src="assets/img/modelo-costas-dois.jpeg" alt="Trabalho 6 - substituir"></figure>
+        </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+
+        <section id="depoimentos" aria-labelledby="depoimentosTitle">
+        <h2 id="depoimentosTitle" class="section-title">Depoimentos</h2>
+        <div class="testimonials">
+            <div class="testimonial">"Atendimento impecável e resultado perfeito!" <br><strong>— Ana P.</strong></div>
+            <div class="testimonial">"Profissionalismo e atenção. Recomendo!" <br><strong>— Carla M.</strong></div>
+            <div class="testimonial">"Ambiente sofisticado e equipe sensível ao cliente." <br><strong>— Marina R.</strong></div>
+        </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" aria-labelledby="contatoTitle">
+        <h2 id="contatoTitle" class="section-title">Fale conosco</h2>
+
+        <div class="contact-wrap">
+            <div class="contact-form" aria-labelledby="contatoTitle">
+            <!-- ajuste action para o endpoint que você usar (ex: formsubmit ou backend) -->
+            <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+                <input type="text" name="nome" placeholder="Seu nome" required aria-label="Nome">
+                <input type="email" name="email" placeholder="Seu e-mail" required aria-label="E-mail">
+                <textarea name="mensagem" placeholder="Mensagem" required aria-label="Mensagem"></textarea>
+                <button type="submit">Enviar mensagem</button>
+            </form>
+            </div>
+
+            <aside class="map" aria-label="Dados de contato">
+            <p><strong>Endereço:</strong><br/>Rua Exemplo, 123 — Bairro</p>
+            <p><strong>WhatsApp:</strong><br/><a href="https://wa.me/5583993242246" target="_blank" rel="noopener noreferrer">+55 83 99324-2246</a></p>
+            <p><strong>Instagram:</strong><br/><a href="https://instagram.com/josenetobs" target="_blank" rel="noopener noreferrer">@josenetobs</a></p>
+            </aside>
+        </div>
+        </section>
+
+        <footer role="contentinfo">
+            <p>© <span id="year"></span> Vion Salon — Todos os direitos reservados</p>
+        </footer>
+
+        </div>
+    
+</body>
+</html>
