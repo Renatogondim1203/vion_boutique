@@ -43,15 +43,14 @@
         font-family: var(--font-dois);
     }
 
-    header{
-        width: 100%;
-        background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
-        position: sticky; /*O cabeçalho fica fixo no topo da tela enquanto o usuário rola a página.
-        Diferente de fixed, o sticky só gruda quando o elemento chega ao topo.*/
+    header {
+        position: fixed;
         top: 0;
+        width: 100%;
         z-index: 50;
-        backdrop-filter: blur(4px); /*Aplica um desfoque de fundo atrás do cabeçalho, criando um efeito 
-        de vidro fosco (glassmorphism).*/
+        height: 4.5rem;
+        background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+        backdrop-filter: blur(4px);
     }
 
     .nav{
@@ -115,19 +114,22 @@
         background-color: var(--carvao);
         width: 100%;
         max-width: var(--max-width);
+        height: 40rem;
         display: grid;
         grid-template-columns: 1fr 480px;
         gap: 2rem;
         align-items: center;
         padding: 6rem 2rem;
-        background-image: url(img/salão_fundo_efeito_escuro.png);
+        background-image: url(img/vion_background_carvao.png);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
+
     .hero-left{
-      color:var(--carvao);
+        display: none;
+        color:var(--carvao);
     }
 
     .eyebrow{
@@ -225,7 +227,7 @@
 
     .equipe-layout img {
     flex: 1 1 300px;
-    height: 300px;
+    height: 400px;
     border-radius: 10px;
     object-fit: cover;
     }
@@ -265,7 +267,7 @@
     .service h4 {
         font-family: var(--font-dois);
         color: var(--carvao);
-        background-color: var(--brown);
+        background-color: var(--beige);
         padding: 0.5rem 1rem;
         border-radius: 8px;
         font-size: 1.1rem;
@@ -279,10 +281,6 @@
         padding: 3rem 2rem; 
         background-color: var(--carvao); 
         text-align: center; 
-        background-image: url(img/vion_boutique_png_fundo3.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
     }
 
     /* Gallery */
@@ -361,7 +359,7 @@
     }
 
     .contact-form button{
-        background:var(--brown);
+        background:var(--beige);
         color:var(--carvao);
         padding:.8rem 1rem;
         border-radius:8px;border:none;
