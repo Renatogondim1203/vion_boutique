@@ -1,414 +1,795 @@
-    :root{
-      --black: #070608;
-      --carvao: #353635;
-      --brown: #c7a77e;
-      --beige: #d4ba99;
-      --cream: #e1cfb7;
-      --max-width: 1100px;
-      --font-um: "Lora", serif;
-      --font-dois: "Open Sans", sans-serif;
-    }
+:root {
+  --black: #070608;
+  --carvao: #353635;
+  --brown: #c7a77e;
+  --beige: #d4ba99;
+  --cream: #e1cfb7;
+  --max-width: 1100px;
+  --font-um: "Lora", serif;
+  --font-dois: "Open Sans", sans-serif;
+}
 
-    *{
-        box-sizing:border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    html, body {
-        height:100%;
-        margin:0;
-        background:var(--carvao);
-        color:var(--beige);
-        -webkit-font-smoothing: antialiased;
-    }
-    
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--carvao);
+  color: var(--beige);
+  -webkit-font-smoothing: antialiased;
+}
 
-    a{
-        color: inherit;
-    }
+a {
+  color: inherit;
+}
 
-    img{
-        max-width:100%;
-        display:block;
-    }
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn-flutuante-mobile {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: var(--carvao); /* controla a cor do ícone */
+  font-size: 1.5rem;
+  padding: 0.8rem 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+  z-index: 100;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.btn-flutuante-mobile svg {
+  display: block;
+}
+
+/* Botão hambúrguer */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--beige);
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+}
+
+/* Menu mobile flutuante */
+.menu-mobile {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.4); /* menos transparente */
+  backdrop-filter: blur(8px); /* vidro esfumado */
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+
+.menu-mobile li {
+  margin-bottom: 1rem;
+}
+
+.menu-mobile li a {
+  color: var(--carvao);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-dois);
+}
+
+/* Layout container */
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--beige);
+  font-family: var(--font-dois);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  height: 4.5rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  backdrop-filter: blur(4px);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-family: var(--font-dois);
+  color: var(--beige);
+  font-size: 1.2rem;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  font-family: var(--font-dois);
+  color: var(--carvao);
+  text-decoration: none;
+  padding: .25rem .5rem;
+  border-radius: 6px;
+  opacity: .95;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.cta-small {
+  font-family: var(--font-dois);
+  padding: .5rem .9rem;
+  border-radius: 8px;
+  background: var(--carvao);
+  text-decoration: none;
+  color: var(--beige);
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background-color: var(--carvao);
+  width: 100%;
+  max-width: var(--max-width);
+  height: 40rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(img/vion_background_beige.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-logo {
+  display: none;
+}
+
+/* Section base */
+section {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  font-family: var(--font-dois);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: var(--carvao);
+}
+
+.muted {
+  color: var(--black);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Seção José Neto */
+section#sobre-jose {
+  background-color: var(--beige);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.jose-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.jose-text {
+  flex: 2 1 500px;
+  max-width: 700px;
+  text-align: left;
+  font-family: var(--font-dois);
+  color: var(--carvao);
+}
+
+.jose-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.jose-img {
+  flex: 1 1 300px;
+}
+
+.jose-img img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.jose-img {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.jose-text,
+.jose-img {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.jose-text.fade-in,
+.jose-img.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.jose-quote {
+  font-family: var(--font-um);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--carvao);
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--brown);
+}
+
+.jose-cta {
+  display: inline-block;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.2); /* transparência leve */
+  backdrop-filter: blur(8px); /* vidro fosco */
+  color: var(--carvao);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.jose-cta:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.jose-mobile-img {
+  display: none;
+}
+
+/* Serviços */
+section#servicos {
+  background-color: var(--beige);
+  position: relative;
+  height: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+.service {
+  position: relative;
+  height: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  min-width: 240px;
+}
+
+.service:hover {
+  transform: scale(1.02);
+}
+
+.service h4 {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  color: var(--carvao);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.service h4.fade-in {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Indicador de rolagem */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.85rem;
+  color: var(--carvao);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-family: var(--font-dois);
+  animation: pulse 2s infinite;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 5;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(5px); }
+  100% { opacity: 0.6; transform: translateX(0); }
+}
+
+/* Galeria */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.gallery-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-grid figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-grid figure:hover figcaption {
+  opacity: 1;
+}
+
+/* Depoimentos */
+section#testimonials {
+  background-color: var(--beige);
+  color: var(--carvao);
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.testimonial-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  height: auto;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  font-style: italic;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.testimonial.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: var(--carvao);
+}
+
+.review-button {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  color: var(--carvao);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  background: rgba(255, 255, 255, 0.2); /* transparência leve */
+  backdrop-filter: blur(8px); /* vidro fosco */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.review-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
 
 
-    /* layout container */
+/* Contato */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
 
-    .site{
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--brown);
-        font-family: var(--font-dois);
-    }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: .75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,.08);
+  margin-bottom: .75rem;
+  font-family: inherit;
+}
 
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 50;
-        height: 4.5rem;
-        background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0));
-        backdrop-filter: blur(4px);
-    }
+.contact-form button {
+  background: var(--carvao);
+  color: var(--beige);
+  padding: .8rem 1rem;
+  border-radius: 8px;
+  border: none;
+}
 
-    .nav{
-        max-width: var(--max-width);
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        gap: 1rem;
-    }
+.map {
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  color: var(--carvao);
+}
 
-    .logo{
-        display: flex;
-        align-items: center;
-        gap: .75rem;
-        font-family: var(--font-dois);
-        color: var(--brown);
-        font-size: 1.2rem;
-    }
-
-    .logo img{
-        height: 40px;
-        width: auto;
-    }
-
-    nav ul{
-        display: flex;
-        gap: 1rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav a{
-        font-family: var(--font-dois);
-        color: var(--beige);
-        text-decoration: none;
-        padding: .25rem .5rem;
-        border-radius: 6px;
-        opacity: .95;
-    }
-
-    nav a:hover{
-        background: rgba(255,255,255,0.06);
-    }
-
-    .cta-small{
-        font-family: var(--font-dois);
-        padding: .5rem .9rem;
-        border-radius: 8px;
-        background: var(--brown);
-        text-decoration: none;
-        color: var(--carvao);
-        font-weight: 600;
-    }
-
-    /*  HERO  */
-
-    .hero{
-        background-color: var(--carvao);
-        width: 100%;
-        max-width: var(--max-width);
-        height: 40rem;
-        display: grid;
-        grid-template-columns: 1fr 480px;
-        gap: 2rem;
-        align-items: center;
-        padding: 6rem 2rem;
-        background-image: url(img/vion_background_carvao.png);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+footer {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--beige);
+  color: var(--carvao);
+}
 
 
-    .hero-left{
-        display: none;
-        color:var(--carvao);
-    }
-
-    .eyebrow{
-        color: var(--beige);
-        font-weight: 500;
-        margin-bottom: .75rem;
-        font-family: var(--font-dois);
-    }
-
-    .hero h1{
-        font-family: var(--font-dois);
-        font-size: 2.1rem;
-        margin: 0 0 2rem;
-        color: var(--beige);
-        line-height: 1.05;
-        font-weight: 300;
-    }
-
-    .hero p{
-        margin: 0 0 1.5rem;
-        color: var(--beige);
-        max-width: 48ch;
-        font-family: var(--font-dois);
-    }
-
-    .hero .cta-group{
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        font-family: var(--font-dois);
-    }
-
-    .btn{
-        display: inline-block;
-        padding: .8rem 1.2rem;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .btn-primary{
-        background-color: var(--beige);
-        color: var(--carvao);
-    }
-
-    .btn-primary:hover{
-        transform: scale(1.02);
-    }
-
-    .btn-ghost{
-        background: transparent;
-        border: 2px solid var(--beige);
-        color: var(--beige);
-    }
-
-    .btn-ghost:hover{
-        transform: scale(1.02);
-    }
-
-    /*  SECTION  */
-
-    section#sobre {
-    background-color: var(--carvao);
-    width: 100%;
-    max-width: var(--max-width);
-    padding: 3rem 2rem;
-    margin: 0 auto;
-    color: var(--brown);
-    text-align: center;
-    font-family: var(--font-dois);
-    }
-
-    .section-title {
-    font-size: 2rem;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    color: var(--brown);
-    font-family: var(--font-dois);
-    }
-
-    .muted {
-    color: var(--brown);
-    font-size: 1rem;
-    line-height: 1.6;
-    }
-
-    .equipe-layout {
-    margin-top: 2rem;
+/* Responsivo até 1000px */
+@media (max-width: 1000px) {
+  .hero {
     display: flex;
-    gap: 2rem;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
-    }
+    align-items: center;
+    padding: 2rem 1rem;
+    height: 100vh;
+    background-image: url(img/vion_background_beige.png);
+    background-size: cover;
+    background-position: center;
+  }
 
-    .equipe-layout img {
-    flex: 1 1 300px;
-    height: 400px;
-    border-radius: 10px;
-    object-fit: cover;
-    }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .equipe-layout div {
-    flex: 2 1 500px;
-    max-width: 700px;
-    text-align: left;
-    }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    /* Services */
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
 
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-    }
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
 
-    .service {
-        position: relative;
-        height: 280px;
-        border-radius: 12px;
-        overflow: hidden;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        padding: 1rem;
-        transition: transform 0.3s ease;
-    }
+  .logo img {
+    display: none;
+  }
+}
 
-    .service:hover {
-    transform: scale(1.02);
-    }
+/* Responsivo até 680px */
+@media (max-width: 680px) {
 
-    .service h4 {
-        font-family: var(--font-dois);
-        color: var(--carvao);
-        background-color: var(--beige);
-        padding: 0.5rem 1rem;
-        border-radius: 8px;
-        font-size: 1.1rem;
-        margin: 0;
-    }
+  /* Esconde botões pequenos exceto o de José Neto */
+  .cta-small:not(.jose-cta) {
+    display: none;
+  }
 
-    section#servicos{ 
-        width: 100%; 
-        max-width: var(--max-width); 
-        margin: 0 auto; 
-        padding: 3rem 2rem; 
-        background-color: var(--carvao); 
-        text-align: center; 
-    }
+  /* Layout geral */
+  .nav {
+    padding: 0.75rem 1rem;
+  }
 
-    /* Gallery */
+  nav ul,
+  .menu-desktop {
+    display: none;
+  }
 
-    .gallery-grid{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
+  .menu-toggle {
+    display: block;
+  }
 
-    .gallery-grid figure{
-        margin:0;
-        border-radius:8px;
-        overflow:hidden;
-    }
+  .btn-flutuante-mobile {
+    display: block;
+  }
 
-    .gallery-grid img{
-        display:block;
-        height:400px;
-        width:100%;
-        object-fit:cover;
-    }
+  /* Hero */
+  .hero {
+    padding: 2rem 1rem;
+    height: 100vh;
+    background-image: url(img/vion_hero_background_smartphone_sem_logo.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
 
-    section#portfolio{ 
-        width: 100%; 
-        max-width: var(--max-width); 
-        margin: 0 auto; 
-        padding: 3rem 2rem; 
-        background-color: var(--carvao); 
-        text-align: center; 
-    }
+  .hero-logo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    width: 180px;
+    opacity: 0;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+    z-index: 2;
+  }
+
+  /* Serviços */
+  section#servicos {
+    height: 100vh;
+    padding: 3rem 0;
+  }
+
+  .services-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .service {
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    border-radius: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+
+  .services-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Galeria */
+section#portfolio {
+  height: 100vh;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.gallery-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.gallery-item {
+  flex: 0 0 100vw;
+  scroll-snap-align: start;
+  border-radius: 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.gallery-grid a{
+    padding: 0;
+}
+
+.gallery-item figure {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0; /* ← bordas retas */
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-grid::-webkit-scrollbar {
+  display: none;
+}
 
 
-    /* Testimonials */
 
-    .testimonials{
-        display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:1rem;
-    }
+  /* Seção José Neto */
+  .section-sobre {
+    text-align: center;
+  }
 
-    .testimonial{
-        background:var(--cream);
-        padding:1rem;
-        border-radius:8px;
-        border:1px solid rgba(0,0,0,.04);
-        font-style:italic;
-        color: var(--carvao);
-    }
+  .jose-layout {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    section#depoimentos{ 
-        width: 100%; 
-        max-width: var(--max-width); 
-        margin: 0 auto; 
-        padding: 3rem 2rem; 
-        background-color: var(--carvao); 
-        text-align: center; 
-    }
+  .jose-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .jose-text blockquote {
+    order: 0;
+  }
 
-    /* Contact */
-    .contact-wrap{
-        display:grid;
-        grid-template-columns:1fr 380px;
-        gap:2rem;
-        align-items:start;
-    }
+  .jose-mobile-img {
+    order: 1;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
 
-    .contact-form input,.contact-form textarea{
-      width:100%;
-      padding:.75rem;
-      border-radius:6px;
-      border:1px solid rgba(0,0,0,.08);
-      margin-bottom:.75rem;
-      font-family:inherit;
-    }
+  .jose-text p {
+    order: 2;
+    font-size: 1rem;
+  }
 
-    .contact-form button{
-        background:var(--beige);
-        color:var(--carvao);
-        padding:.8rem 1rem;
-        border-radius:8px;border:none;
-    }
+  .jose-cta {
+    order: 3;
+  }
 
-    section#contato{ 
-        width: 100%; 
-        max-width: var(--max-width); 
-        margin: 0 auto; 
-        padding: 3rem 2rem; 
-        background-color: var(--carvao); 
-        text-align: center; 
-    }
+  .jose-img img {
+    max-width: 100%;
+    height: auto;
+  }
 
-    .map{
-      background:linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
-      border-radius:8px;
-      padding:1rem;
-      text-align:center;
-      color:var(--brown);
-    }
+  .jose-desktop-img {
+    display: none;
+  }
+}
 
-    footer{
-        width:100%;
-        max-width: var(--max-width); 
-        padding:2rem 1rem;
-        text-align:center;
-        background: var(--carvao);
-        color:var(--brown);
-    }
-
-    /* responsive */
-    @media (max-width:1000px){
-      .hero{grid-template-columns:1fr 320px;}
-      .hero-right img{height:320px}
-      .services-grid{grid-template-columns:repeat(2,1fr)}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .testimonials{grid-template-columns:1fr}
-      .contact-wrap{grid-template-columns:1fr}
-    }
-    @media (max-width:680px){
-      nav ul{display:none}
-      .nav{padding:.75rem 1rem}
-      .hero{grid-template-columns:1fr;gap:1rem;padding:2rem 1rem;width: 100%; height: 100vh;background-size:cover;background-image: url(img/vion_hero_background_smartphone.png);}
-      .hero-right{order:2}
-      .hero-right img{height:260px}
-      .services-grid{grid-template-columns:1fr}
-      .gallery-grid{grid-template-columns:1fr}
-      .section-sobre{text-align: center;}
-    }
-    /* small visual tweaks */
-    .muted { color: var(--muted); font-size:.95rem;}
+/* Indicador de rolagem só aparece no mobile */
+@media (min-width: 681px) {
+  .scroll-indicator {
+    display: none;
+  }
+}

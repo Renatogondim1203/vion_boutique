@@ -13,112 +13,183 @@
 
 </head>
 <body>
+    <!-- Botão flutuante de ligação (mobile only) -->
+    <a href="tel:+5583999999999" class="btn-flutuante-mobile" aria-label="Ligar para o salão">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.88.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22.24 1.76 13.93 1.76 3a1 1 0 011-1H6.26a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+    </svg>
+    </a>
     <div class="site" id="top">
         <header>
-            <div class="nav">
-                <div class="logo">
-                    <!--logo: deixe acessível-->
-                    <img src="assets/img/vion_boutique_dourado_png.png" alt="Vion Salon">
-                    <span class="brand-name"></span>
-                </div>
-
-                <nav>
-                    <ul>
-                        <li><a href="#inicio">Início</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#Servicos">Serviços</a></li>
-                        <li><a href="#portfolio">Portfólio</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </nav>
-
-                <a class="cta-small" href="tel:+5583993242246" aria-label="Ligar para o salão">Ligar</a>
+        <div class="nav">
+            <div class="logo">
+            <img src="assets/img/VION_solo_png.jpg" alt="Vion Salon">
+            <span class="brand-name"></span>
             </div>
+
+            <!-- Botão hambúrguer -->
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+            <!-- Menu desktop -->
+            <nav>
+            <ul class="menu-desktop">
+                <li><a href="#inicio">Start</a></li>
+                <li><a href="#about-jose">About</a></li>
+                <li><a href="#servicos">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contato">Contact</a></li>
+            </ul>
+            </nav>
+        </div>
+
+        <!-- Menu mobile flutuante -->
+        <ul class="menu-mobile">
+            <li><a href="#inicio">Start</a></li>
+            <li><a href="#about-jose">About</a></li>
+            <li><a href="#servicos">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contato">Contact</a></li>
+        </ul>
         </header>
 
         <!--  HERO  -->
 
         <main class="hero" id="inicio" role="main">
-            <div class="hero-left">
-                <div class="eyebrow">Beleza & Sofisticação</div>
-                <h1>Beleza com sofisticação - tratamentos e estilo que realçam sua melhor versão.</h1>
-                <p class="muted">Ambiente premium, profissionais experientes e atendimento personalizado.</p>
-                <div class="cta-group">
-                    <a class="btn btn-primary" href="https://wa.me/5583993242246" target="_blank" rel="noopener noreferrer" aria-label="Agendar pelo WhatsApp">Agendar pelo WhatsApp</a>
-                    <a class="btn btn-ghost" href="#portfolio">Ver Portfólio</a>
-                </div>
-            </div>
+        <img src="assets/img/vion_logo_mobile.png" alt="Logo VION" class="hero-logo" />
         </main>
-
-        <!--  SOBRE  -->
-
-        <section id="sobre" aria-labelledby="sobreTitle">
-        <h2 id="sobreTitle" class="section-title">Sobre o salão</h2>
-        <p class="muted">
-            O Salão Vion oferece serviços de alto padrão em cabelo, maquiagem, unhas e tratamentos estéticos. <br>
-            Nossa equipe prioriza técnica, estética e bem-estar.
-        </p>
-
-        <div class="equipe-layout">
-            <img src="assets/img/josé_neto.jpeg" alt="Equipe do Salão Vion sorrindo" />
-            <div>
-            <p class="muted">
-                Há anos no mercado, o Vion se destaca por serviços personalizados, ambiente sofisticado e atenção aos detalhes.
-                Garantimos experiências exclusivas para cada cliente.
-            </p>
-            </div>
-        </div>
-        </section>
 
         <!-- SERVIÇOS -->
         <section id="servicos" aria-labelledby="servicosTitle">
-        <h2 id="servicosTitle" class="section-title">Serviços principais</h2>
+            <div class="scroll-indicator" aria-hidden="true">
+                <span>⇠ Slide ⇢</span>
+            </div>
+        <h2 id="servicosTitle" class="section-title">Main services</h2>
         <div class="services-grid" role="list">
-            
-            <article class="service" role="listitem" aria-label="Cabelo" style="background-image: url('assets/img/modelo-frente-sexy.jpeg');">
-            <h4>Cabelo</h4>
+            <article class="service" role="listitem" aria-label="Unhas & Spa" style="background-image: url('assets/img/blowout.png');">
+            <h4>Blow out</h4>
             </article>
-
-            <article class="service" role="listitem" aria-label="Maquiagem" style="background-image: url('assets/img/modelo-costas.jpeg');">
-            <h4>Maquiagem</h4>
+            <article class="service" role="listitem" aria-label="makeup" style="background-image: url('assets/img/makeup.png');">
+            <h4>Makeup</h4>
             </article>
-
-            <article class="service" role="listitem" aria-label="Unhas & Spa" style="background-image: url('assets/img/modelo-lado.jpeg');">
-            <h4>Unhas & Spa</h4>
+            <article class="service" role="listitem" aria-label="highlights" style="background-image: url('assets/img/highlights.png');">
+            <h4>Highlights</h4>
             </article>
+        </div>
+        </section>
 
+        <!--  SOBRE  -->
+        <section id="about-jose" aria-labelledby="joseTitle">
+        <h2 id="joseTitle" class="section-title">Meet José Neto</h2>
+
+        <div class="jose-layout">
+            <div class="jose-text">
+            <blockquote class="jose-quote">
+                “Beauty lies in the details — and every strand tells a story.”
+            </blockquote>
+
+            <!-- Mobile image (inside jose-text for correct ordering) -->
+            <div class="jose-img jose-mobile-img">
+                <img src="assets/img/josé_neto.jpeg" alt="José Neto, hair stylist and founder of Vion" />
+            </div>
+
+            <p class="muted">
+                José Neto began his career as a specialist in hair coloring and visagism, earning recognition for his refined technique and artistic vision. <br><br>
+                With a signature style and attention to detail, he became a reference in hair transformations that highlight each client’s natural beauty.
+            </p>
+
+            <p class="muted">
+                As the creative mind behind campaigns that bear his personal touch — from model selection to artistic direction — José Neto built a brand that blends sophistication, authenticity, and trust.
+            </p>
+
+            <p class="muted">
+                His clientele includes influential figures in fashion and media who rely on his talent to craft striking and elegant looks.
+            </p>
+
+            <a href="#contato" class="cta-small jose-cta">Book with José Neto</a>
+            </div>
+
+            <!-- Desktop image (outside jose-text) -->
+            <div class="jose-img jose-desktop-img">
+            <img src="assets/img/josé_neto.jpeg" alt="José Neto, hair stylist and founder of Vion" />
+            </div>
         </div>
         </section>
 
         <!-- PORTFÓLIO / GALLERY -->
 
-        <section id="portfolio" aria-labelledby="portfolioTitle">
-        <h2 id="portfolioTitle" class="section-title">Galeria / Portfólio</h2>
+<section id="portfolio" aria-labelledby="portfolioTitle">
+  <h2 id="portfolioTitle" class="section-title">Gallery / Portfolio</h2>
 
-        <div class="gallery-grid" aria-live="polite">
-            <figure><img src="assets/img/modelo-frente-sexy.jpeg" alt="Trabalho 1 - substituir"></figure>
-            <figure><img src="assets/img/modelo-lado.jpeg" alt="Trabalho 2 - substituir"></figure>
-            <figure><img src="assets/img/modelo-frente-preto.jpeg" alt="Trabalho 3 - substituir"></figure>
-            <figure><img src="assets/img/modelo-frente.jpeg" alt="Trabalho 4 - substituir"></figure>
-            <figure><img src="assets/img/modelo-frente-3.jpeg" alt="Trabalho 5 - substituir"></figure>
-            <figure><img src="assets/img/modelo-costas-dois.jpeg" alt="Trabalho 6 - substituir"></figure>
-        </div>
-        </section>
+  <div class="gallery-grid" aria-live="polite">
+    <a href="assets/img/modelo-frente-sexy.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-frente-sexy.jpeg" alt="Work 1">
+      </figure>
+    </a>
+    <a href="assets/img/modelo-lado.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-lado.jpeg" alt="Work 2">
+      </figure>
+    </a>
+    <a href="assets/img/modelo-frente-preto.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-frente-preto.jpeg" alt="Work 3">
+      </figure>
+    </a>
+    <a href="assets/img/modelo-frente.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-frente.jpeg" alt="Work 4">
+      </figure>
+    </a>
+    <a href="assets/img/modelo-frente-3.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-frente-3.jpeg" alt="Work 5">
+      </figure>
+    </a>
+    <a href="assets/img/modelo-costas-dois.jpeg" data-fslightbox="gallery" class="gallery-item">
+      <figure>
+        <img src="assets/img/modelo-costas-dois.jpeg" alt="Work 6">
+      </figure>
+    </a>
+  </div>
+
+  <!-- Indicador de deslize -->
+  <div class="scroll-indicator">
+    <span>⇠ Slide ⇢</span>
+  </div>
+</section>
 
         <!-- DEPOIMENTOS -->
 
-        <section id="depoimentos" aria-labelledby="depoimentosTitle">
-        <h2 id="depoimentosTitle" class="section-title">Depoimentos</h2>
-        <div class="testimonials">
-            <div class="testimonial">"Atendimento impecável e resultado perfeito!" <br><strong>— Ana P.</strong></div>
-            <div class="testimonial">"Profissionalismo e atenção. Recomendo!" <br><strong>— Carla M.</strong></div>
-            <div class="testimonial">"Ambiente sofisticado e equipe sensível ao cliente." <br><strong>— Marina R.</strong></div>
-        </div>
-        </section>
+<section id="testimonials" aria-labelledby="testimonialsTitle">
+  <h2 id="testimonialsTitle" class="section-title">What Our Clients Say</h2>
 
+  <div class="testimonial-carousel" aria-live="polite">
+    <div class="testimonial active">
+      <p>"Impeccable service and flawless results. I always leave feeling confident and beautiful."</p>
+      <strong>— Ana P.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Professional, attentive, and truly talented. I wouldn’t trust anyone else with my hair."</p>
+      <strong>— Carla M.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Elegant space, warm team, and a personalized experience every time."</p>
+      <strong>— Marina R.</strong>
+    </div>
+  </div>
+
+  <div class="testimonial-nav">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <a href="#contato" class="review-button">Leave a Review</a>
+</section>
         <!-- CONTATO -->
         <section id="contato" aria-labelledby="contatoTitle">
-        <h2 id="contatoTitle" class="section-title">Fale conosco</h2>
+        <h2 id="contatoTitle" class="section-title">Contact us</h2>
 
         <div class="contact-wrap">
             <div class="contact-form" aria-labelledby="contatoTitle">
@@ -145,5 +216,7 @@
 
         </div>
     
+<script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
