@@ -179,7 +179,7 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(img/vion_background_beige.png);
+  background-image: url(img/vion_background_beige_salon.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -344,23 +344,27 @@ section#servicos {
 }
 
 .service h4 {
-  font-size: 1.6rem;
+  font-size: 1rem;
   text-align: center;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
+  padding: 0.8rem 1.2rem;
+  background: rgba(255, 255, 255, 0.2); /* transparência leve */
+  backdrop-filter: blur(8px); /* vidro fosco */
+  border-radius: 12px;
   color: var(--carvao);
   font-weight: 600;
+  text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
 }
 
 .service h4.fade-in {
   animation: fadeUp 0.8s ease forwards;
+}
+
+.service h4:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 @keyframes fadeUp {
@@ -447,6 +451,91 @@ section#servicos {
 .gallery-grid figure:hover figcaption {
   opacity: 1;
 }
+
+/* Espaço */
+section#espaco {
+  height: 100vh;
+  padding: 3rem 0;
+  position: relative;
+  background-color: var(--beige);
+  color: var(--carvao);
+  text-align: center;
+}
+
+#espaco .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.center-text {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Layout igual à galeria no desktop */
+.space-scroll {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.space-scroll a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.space-scroll figure {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.space-scroll img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.space-scroll a,
+.space-scroll figure {
+  height: 100%;
+}
+
+.space-scroll img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.space-scroll figure:hover img {
+  transform: scale(1.05);
+}
+
+.space-scroll figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.space-scroll figure:hover figcaption {
+  opacity: 1;
+}
+
 
 /* Depoimentos */
 section#testimonials {
@@ -546,11 +635,21 @@ section#testimonials {
 }
 
 .contact-form button {
-  background: var(--carvao);
-  color: var(--beige);
-  padding: .8rem 1rem;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2); /* transparência leve */
+  backdrop-filter: blur(8px); /* vidro fosco */
+  color: var(--carvao);
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
   border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .map {
@@ -786,6 +885,64 @@ section#portfolio {
   .jose-desktop-img {
     display: none;
   }
+
+  /* Seção Space */
+
+    section#espaco {
+    height: 100vh;
+    padding: 3rem 0;
+    position: relative;
+  }
+
+  .space-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  .space-item {
+    flex: 0 0 100vw;
+    scroll-snap-align: start;
+    border-radius: 0;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+  }
+
+  .space-scroll a {
+    padding: 0;
+  }
+
+  .space-item figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .space-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .space-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .space-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  
 }
 
 /* Indicador de rolagem só aparece no mobile */
