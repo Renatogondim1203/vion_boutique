@@ -17,8 +17,8 @@
 html, body {
   height: 100%;
   margin: 0;
-  background: var(--carvao);
-  color: var(--beige);
+  background: var(--beige);
+  color: var(--carvao);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -347,7 +347,7 @@ section#servicos {
   font-size: 1rem;
   text-align: center;
   padding: 0.8rem 1.2rem;
-  background: var(--beige); /* transparência leve */
+  background: var(--beige);
   backdrop-filter: blur(130px); /* vidro fosco */
   border-radius: 8px;
   color: var(--carvao);
