@@ -348,10 +348,10 @@ section#servicos {
   text-align: center;
   padding: 0.8rem 1.2rem;
   background: rgba(255, 255, 255, 0.2); /* transparência leve */
-  backdrop-filter: blur(8px); /* vidro fosco */
-  border-radius: 12px;
+  backdrop-filter: blur(130px); /* vidro fosco */
+  border-radius: 8px;
   color: var(--carvao);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
