@@ -951,3 +951,10 @@ section#portfolio {
     display: none;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--beige);
+    color: var(--carvao);
+  }
+}
