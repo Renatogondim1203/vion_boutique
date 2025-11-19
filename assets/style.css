@@ -747,7 +747,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%) translateY(20px);
     width: 180px;
-    opacity: 0;
+    opacity:0;
     transition: opacity 1.2s ease, transform 1.2s ease;
     z-index: 2;
   }
@@ -957,4 +957,4 @@ section#portfolio {
     background: var(--beige);
     color: var(--carvao);
   }
-}
+} 
