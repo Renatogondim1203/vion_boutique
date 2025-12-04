@@ -237,15 +237,27 @@
         <h2 id="contatoTitle" class="section-title">Contact us</h2>
 
         <div class="contact-wrap">
-            <div class="contact-form" aria-labelledby="contatoTitle">
-            <!-- ajuste action para o endpoint que você usar (ex: formsubmit ou backend) -->
-            <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
-                <input type="text" name="nome" placeholder="Your name" required aria-label="Nome">
-                <input type="email" name="email" placeholder="E-mail" required aria-label="E-mail">
-                <textarea name="mensagem" placeholder="Message" required aria-label="Mensagem"></textarea>
-                <button type="submit">Send message</button>
+          <div class="contact-form" aria-labelledby="contatoTitle">
+            <form action="https://formsubmit.co/salonvion@gmail.com" method="POST">
+              <!-- Campos principais -->
+              <input type="text" name="nome" placeholder="Your name" required aria-label="Nome">
+              <input type="email" name="email" placeholder="E-mail" required aria-label="E-mail">
+              <textarea name="mensagem" placeholder="Message" required aria-label="Mensagem"></textarea>
+              <button type="submit">Send message</button>
+
+              <!-- Configurações extras -->
+              <!-- Redireciona para obrigado.html na mesma pasta -->
+              <input type="hidden" name="_next" value="https://vionsalon.com/obrigado.html">              
+              <!-- Assunto do e-mail -->
+              <input type="hidden" name="_subject" value="New message from Vion Salon">
+              <!-- Desativa captcha -->
+              <input type="hidden" name="_captcha" value="false">
+              <!-- Organiza os dados em tabela -->
+              <input type="hidden" name="_template" value="table">
+              <!-- Honeypot anti-spam -->
+              <input type="text" name="_honey" style="display:none">
             </form>
-            </div>
+          </div>
 
             <aside class="map" aria-label="Dados de contato">
             <p><strong>Address:</strong><br/>555 Federal Highway, Boca Raton, Florida USA</p>
